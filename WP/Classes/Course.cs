@@ -77,17 +77,40 @@ namespace WP.Classes
 
         public bool UpdateCourse(int id, string label, int period, string description)
         {
-            SqlCommand command = new SqlCommand("UPDATE Course " +
-                                                "SET label=@label, " +
-                                                "period=@period, " +
-                                                "description=@description " +
-                                                "where id=@id", 
+            SqlCommand command = new SqlCommand(
+                                "UPDATE Course" +
+                                " SET " +
+                                "label = @label," +
+                                "period = @period," +
+                                "description = @description" +
+                                " WHERE id = @ID"
+                                , db.getConnection);
+
+            command.Parameters.Add("@label", SqlDbType.NVarChar).Value = label;
+            command.Parameters.Add("@period", SqlDbType.Int).Value = period;
+            command.Parameters.Add("@description", SqlDbType.Text).Value = description;
+            command.Parameters.Add("@ID", SqlDbType.Int).Value = id;
+
+            db.openConnection();
+            if (command.ExecuteNonQuery() == 1)
+            {
+                db.closeConnection();
+                return true;
+            }
+            else
+            {
+                db.closeConnection();
+                return false;
+            }
+        }
+
+        public bool DeleteCourse(int id)
+        {
+            SqlCommand command = new SqlCommand("DELETE FROM Course " +
+                                                "where id=@id",
                                                 db.getConnection);
 
             command.Parameters.Add("@id", SqlDbType.Int).Value = id;
-            command.Parameters.Add("@label", SqlDbType.VarChar).Value = label;
-            command.Parameters.Add("@period", SqlDbType.Int).Value = period;
-            command.Parameters.Add("@description", SqlDbType.Text).Value = description;
 
             db.openConnection();
             if (command.ExecuteNonQuery() == 1)
@@ -126,6 +149,12 @@ namespace WP.Classes
         {
             string query = $"SELECT * FROM Course WHERE id = {id}";
             return this.GetTable(query);
+        }
+
+        public int TotalCourse()
+        {
+            DataTable table = this.GetAllCourses();
+            return table.Rows.Count;
         }
     }
 }

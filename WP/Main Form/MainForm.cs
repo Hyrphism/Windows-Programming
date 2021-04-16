@@ -70,5 +70,11 @@ namespace WP
             EditCourseForm editCourseForm = new EditCourseForm();
             editCourseForm.ShowDialog();
         }
+
+        private void manageCourseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageCourseForm manageCourseForm = new ManageCourseForm();
+            manageCourseForm.ShowDialog();
+        }
     }
 }
