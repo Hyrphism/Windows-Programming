@@ -13,9 +13,9 @@ using DataTable = System.Data.DataTable;
 
 namespace WP
 {
-    public partial class PrintForm : Form
+    public partial class PrintStudentForm : Form
     {
-        public PrintForm()
+        public PrintStudentForm()
         {
             InitializeComponent();
         }

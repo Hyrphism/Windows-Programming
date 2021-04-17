@@ -49,7 +49,7 @@ namespace WP
 
         private void printToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PrintForm printForm = new PrintForm();
+            PrintStudentForm printForm = new PrintStudentForm();
             printForm.ShowDialog();
         }
 
@@ -75,6 +75,12 @@ namespace WP
         {
             ManageCourseForm manageCourseForm = new ManageCourseForm();
             manageCourseForm.ShowDialog();
+        }
+
+        private void printToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            PrintCourseForm printCourseForm = new PrintCourseForm();
+            printCourseForm.ShowDialog();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace WP
 {
-    partial class PrintForm
+    partial class PrintStudentForm
     {
         /// <summary>
         /// Required designer variable.
