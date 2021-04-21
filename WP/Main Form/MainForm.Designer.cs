@@ -43,6 +43,10 @@
             this.manageCourseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.sCOREToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeScoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.averageScoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageScoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -170,10 +174,43 @@
             // 
             // sCOREToolStripMenuItem
             // 
+            this.sCOREToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aDToolStripMenuItem,
+            this.removeScoreToolStripMenuItem,
+            this.averageScoreToolStripMenuItem,
+            this.manageScoreToolStripMenuItem});
             this.sCOREToolStripMenuItem.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold);
             this.sCOREToolStripMenuItem.Name = "sCOREToolStripMenuItem";
             this.sCOREToolStripMenuItem.Size = new System.Drawing.Size(105, 30);
             this.sCOREToolStripMenuItem.Text = "SCORE";
+            // 
+            // aDToolStripMenuItem
+            // 
+            this.aDToolStripMenuItem.Name = "aDToolStripMenuItem";
+            this.aDToolStripMenuItem.Size = new System.Drawing.Size(249, 30);
+            this.aDToolStripMenuItem.Text = "Add Score";
+            this.aDToolStripMenuItem.Click += new System.EventHandler(this.aDToolStripMenuItem_Click);
+            // 
+            // removeScoreToolStripMenuItem
+            // 
+            this.removeScoreToolStripMenuItem.Name = "removeScoreToolStripMenuItem";
+            this.removeScoreToolStripMenuItem.Size = new System.Drawing.Size(249, 30);
+            this.removeScoreToolStripMenuItem.Text = "Remove Score";
+            this.removeScoreToolStripMenuItem.Click += new System.EventHandler(this.removeScoreToolStripMenuItem_Click);
+            // 
+            // averageScoreToolStripMenuItem
+            // 
+            this.averageScoreToolStripMenuItem.Name = "averageScoreToolStripMenuItem";
+            this.averageScoreToolStripMenuItem.Size = new System.Drawing.Size(249, 30);
+            this.averageScoreToolStripMenuItem.Text = "Average Score";
+            this.averageScoreToolStripMenuItem.Click += new System.EventHandler(this.averageScoreToolStripMenuItem_Click);
+            // 
+            // manageScoreToolStripMenuItem
+            // 
+            this.manageScoreToolStripMenuItem.Name = "manageScoreToolStripMenuItem";
+            this.manageScoreToolStripMenuItem.Size = new System.Drawing.Size(249, 30);
+            this.manageScoreToolStripMenuItem.Text = "Manage Score";
+            this.manageScoreToolStripMenuItem.Click += new System.EventHandler(this.manageScoreToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -209,5 +246,9 @@
         private System.Windows.Forms.ToolStripMenuItem editCourseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageCourseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem aDToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem removeScoreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem averageScoreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageScoreToolStripMenuItem;
     }
 }

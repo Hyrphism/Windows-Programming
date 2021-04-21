@@ -33,7 +33,7 @@ namespace WP.Course_Form
             dataGridViewCourse.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dataGridViewCourse.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewCourse.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCourse.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCourse.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

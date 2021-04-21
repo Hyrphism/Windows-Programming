@@ -55,8 +55,40 @@ namespace WP.Course_Form
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            AddCourseForm addCourseForm = new AddCourseForm();
-            addCourseForm.ShowDialog();
+            int id = Convert.ToInt32(textBoxID.Text);
+            string label = textBoxLabel.Text;
+            int period = Convert.ToInt32(numericUpDown1.Value);
+            string description = textBoxDescription.Text;
+
+            if (period < 1 || period > 24)
+            {
+                MessageBox.Show("The course period must be between 1 and 24 hours", "Invalid course period", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (label.Trim() == "")
+            {
+                MessageBox.Show("Add a course name", "Add course", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (course.CheckCourseName(label, id))
+            {
+                if (course.InsertCourse(id, label, period, description))
+                {
+                    MessageBox.Show("New course inserted", "Add course", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Course not inserted", "Add course", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("This course name already exists", "Add course", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+
+            textBoxID.Text = "";
+            textBoxLabel.Text = "";
+            textBoxDescription.Text = "";
+            numericUpDown1.Value = 0;
             ReloadListBoxData();
         }
 
@@ -105,6 +137,13 @@ namespace WP.Course_Form
             index = 0;
             ReloadListBoxData();
         }
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            textBoxID.Text = "";
+            textBoxLabel.Text = "";
+            textBoxDescription.Text = "";
+            numericUpDown1.Value = 0;
+        }
 
         private void buttonFirst_Click(object sender, EventArgs e)
         {
@@ -135,5 +174,6 @@ namespace WP.Course_Form
             index = course.GetAllCourses().Rows.Count - 1;
             ShowData(index);
         }
+
     }
 }

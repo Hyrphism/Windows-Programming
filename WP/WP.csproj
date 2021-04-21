@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Course.cs" />
+    <Compile Include="Classes\Score.cs" />
     <Compile Include="Course Form\AddCourseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +86,30 @@
     </Compile>
     <Compile Include="Course Form\RemoveCourseForm.Designer.cs">
       <DependentUpon>RemoveCourseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScoreForm\AddScoreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScoreForm\AddScoreForm.Designer.cs">
+      <DependentUpon>AddScoreForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScoreForm\AverageScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScoreForm\AverageScore.Designer.cs">
+      <DependentUpon>AverageScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScoreForm\ManageScoreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScoreForm\ManageScoreForm.Designer.cs">
+      <DependentUpon>ManageScoreForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScoreForm\RemoveScoreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScoreForm\RemoveScoreForm.Designer.cs">
+      <DependentUpon>RemoveScoreForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Student Form\StaticsForm.cs">
       <SubType>Form</SubType>
@@ -152,6 +177,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Course Form\RemoveCourseForm.resx">
       <DependentUpon>RemoveCourseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScoreForm\AddScoreForm.resx">
+      <DependentUpon>AddScoreForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScoreForm\AverageScore.resx">
+      <DependentUpon>AverageScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScoreForm\ManageScoreForm.resx">
+      <DependentUpon>ManageScoreForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScoreForm\RemoveScoreForm.resx">
+      <DependentUpon>RemoveScoreForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student Form\PrintStudentForm.resx">
       <DependentUpon>PrintStudentForm.cs</DependentUpon>

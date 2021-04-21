@@ -156,5 +156,14 @@ namespace WP.Classes
             DataTable table = this.GetAllCourses();
             return table.Rows.Count;
         }
+
+        public DataTable GetAverageScore()
+        {
+            string query = "SELECT c.label, AVG(s.student_score) as 'average score' " +
+                           "FROM Course c, Score s " +
+                           "WHERE c.id = s.course_id " +
+                           "GROUP BY c.label";
+            return this.GetTable(query);
+        }
     }
 }

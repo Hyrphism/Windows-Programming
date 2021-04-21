@@ -45,6 +45,7 @@
             this.buttonRemove = new System.Windows.Forms.Button();
             this.listBoxCourse = new System.Windows.Forms.ListBox();
             this.labelTotalCourse = new System.Windows.Forms.Label();
+            this.buttonClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -160,7 +161,7 @@
             this.buttonPrevious.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.buttonPrevious.Location = new System.Drawing.Point(320, 444);
             this.buttonPrevious.Name = "buttonPrevious";
-            this.buttonPrevious.Size = new System.Drawing.Size(151, 58);
+            this.buttonPrevious.Size = new System.Drawing.Size(143, 58);
             this.buttonPrevious.TabIndex = 10;
             this.buttonPrevious.Text = "Previous";
             this.buttonPrevious.UseVisualStyleBackColor = false;
@@ -182,7 +183,7 @@
             // 
             this.buttonAdd.BackColor = System.Drawing.Color.Blue;
             this.buttonAdd.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
-            this.buttonAdd.Location = new System.Drawing.Point(105, 528);
+            this.buttonAdd.Location = new System.Drawing.Point(32, 528);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(131, 58);
             this.buttonAdd.TabIndex = 12;
@@ -194,9 +195,9 @@
             // 
             this.buttonEdit.BackColor = System.Drawing.Color.Lime;
             this.buttonEdit.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
-            this.buttonEdit.Location = new System.Drawing.Point(256, 528);
+            this.buttonEdit.Location = new System.Drawing.Point(174, 528);
             this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(131, 58);
+            this.buttonEdit.Size = new System.Drawing.Size(140, 58);
             this.buttonEdit.TabIndex = 13;
             this.buttonEdit.Text = "Edit";
             this.buttonEdit.UseVisualStyleBackColor = false;
@@ -206,9 +207,9 @@
             // 
             this.buttonRemove.BackColor = System.Drawing.Color.Red;
             this.buttonRemove.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
-            this.buttonRemove.Location = new System.Drawing.Point(403, 528);
+            this.buttonRemove.Location = new System.Drawing.Point(320, 528);
             this.buttonRemove.Name = "buttonRemove";
-            this.buttonRemove.Size = new System.Drawing.Size(131, 58);
+            this.buttonRemove.Size = new System.Drawing.Size(143, 58);
             this.buttonRemove.TabIndex = 14;
             this.buttonRemove.Text = "Remove";
             this.buttonRemove.UseVisualStyleBackColor = false;
@@ -238,12 +239,25 @@
             this.labelTotalCourse.Text = "Total Course:";
             this.labelTotalCourse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // buttonClear
+            // 
+            this.buttonClear.BackColor = System.Drawing.Color.Red;
+            this.buttonClear.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.buttonClear.Location = new System.Drawing.Point(477, 528);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(130, 58);
+            this.buttonClear.TabIndex = 19;
+            this.buttonClear.Text = "Clear";
+            this.buttonClear.UseVisualStyleBackColor = false;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            // 
             // ManageCourseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1145, 638);
+            this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.labelTotalCourse);
             this.Controls.Add(this.listBoxCourse);
             this.Controls.Add(this.buttonRemove);
@@ -289,5 +303,6 @@
         private System.Windows.Forms.Button buttonRemove;
         private System.Windows.Forms.Label labelTotalCourse;
         private System.Windows.Forms.ListBox listBoxCourse;
+        private System.Windows.Forms.Button buttonClear;
     }
 }

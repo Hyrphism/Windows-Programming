@@ -82,5 +82,29 @@ namespace WP
             PrintCourseForm printCourseForm = new PrintCourseForm();
             printCourseForm.ShowDialog();
         }
+
+        private void aDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddScoreForm addScoreForm = new AddScoreForm();
+            addScoreForm.ShowDialog();
+        }
+
+        private void removeScoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RemoveScoreForm removeScoreForm = new RemoveScoreForm();
+            removeScoreForm.ShowDialog();
+        }
+
+        private void averageScoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AverageScore averageScore = new AverageScore();
+            averageScore.ShowDialog();
+        }
+
+        private void manageScoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageScoreForm manageScoreForm = new ManageScoreForm();
+            manageScoreForm.ShowDialog();
+        }
     }
 }
