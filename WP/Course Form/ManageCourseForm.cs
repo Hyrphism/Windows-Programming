@@ -8,6 +8,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 using WP.Classes;
 
 namespace WP.Course_Form
@@ -44,6 +45,7 @@ namespace WP.Course_Form
             textBoxLabel.Text = dataRow.ItemArray[1].ToString();
             numericUpDown1.Value = int.Parse(dataRow.ItemArray[2].ToString());
             textBoxDescription.Text = dataRow.ItemArray[3].ToString();
+            textBoxSemester.Text = dataRow.ItemArray[4].ToString();
         }
 
         private void listBoxCourse_SelectedIndexChanged(object sender, EventArgs e)
@@ -53,12 +55,25 @@ namespace WP.Course_Form
             ShowData(index);
         }
 
+        private void listBoxCourse_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            string label = textBoxLabel.Text.Trim();
+            string semester = textBoxSemester.Text.Trim();
+
+            CourseStudentListForm courseStudentListForm = new CourseStudentListForm();
+            courseStudentListForm.textBoxCourseName.Text = label;
+            courseStudentListForm.textBoxSemester.Text = semester;
+            courseStudentListForm.dataGridView.DataSource = course.CourseStudentList(label, semester);
+            courseStudentListForm.Show();
+        }
+
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(textBoxID.Text);
             string label = textBoxLabel.Text;
             int period = Convert.ToInt32(numericUpDown1.Value);
             string description = textBoxDescription.Text;
+            string semester = textBoxSemester.Text;
 
             if (period < 1 || period > 24)
             {
@@ -70,7 +85,7 @@ namespace WP.Course_Form
             }
             else if (course.CheckCourseName(label, id))
             {
-                if (course.InsertCourse(id, label, period, description))
+                if (course.InsertCourse(id, label, period, description, semester))
                 {
                     MessageBox.Show("New course inserted", "Add course", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -88,6 +103,7 @@ namespace WP.Course_Form
             textBoxID.Text = "";
             textBoxLabel.Text = "";
             textBoxDescription.Text = "";
+            textBoxSemester.Text = "";
             numericUpDown1.Value = 0;
             ReloadListBoxData();
         }
@@ -98,14 +114,23 @@ namespace WP.Course_Form
             string label = textBoxLabel.Text;
             int hour = (int)numericUpDown1.Value;
             string description = textBoxDescription.Text;
+            string semester = textBoxSemester.Text;
+            bool match = Regex.IsMatch(semester, ".{4}-.{4}");
 
-            if (course.UpdateCourse(id, label, hour, description))
+            if (match)
             {
-                MessageBox.Show("Course Updated", "Edit Course", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (course.UpdateCourse(id, label, hour, description, semester))
+                {
+                    MessageBox.Show("Course Updated", "Edit Course", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Course Not Updated", "Edit Course", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else
             {
-                MessageBox.Show("Course Not Updated", "Edit Course", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please Write Semester In The Form ####-####", "Edit Course", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -122,6 +147,7 @@ namespace WP.Course_Form
                         textBoxID.Text = "";
                         textBoxLabel.Text = "";
                         textBoxDescription.Text = "";
+                        textBoxSemester.Text = "";
                         numericUpDown1.Value = 0;
                     }
                     else
@@ -142,6 +168,7 @@ namespace WP.Course_Form
             textBoxID.Text = "";
             textBoxLabel.Text = "";
             textBoxDescription.Text = "";
+            textBoxSemester.Text = "";
             numericUpDown1.Value = 0;
         }
 
@@ -174,6 +201,5 @@ namespace WP.Course_Form
             index = course.GetAllCourses().Rows.Count - 1;
             ShowData(index);
         }
-
     }
 }

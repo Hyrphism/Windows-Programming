@@ -42,7 +42,7 @@ namespace WP
             this.dataGridViewRemove.Name = "dataGridViewRemove";
             this.dataGridViewRemove.RowHeadersWidth = 62;
             this.dataGridViewRemove.RowTemplate.Height = 28;
-            this.dataGridViewRemove.Size = new System.Drawing.Size(690, 348);
+            this.dataGridViewRemove.Size = new System.Drawing.Size(1181, 418);
             this.dataGridViewRemove.TabIndex = 0;
             // 
             // remove_btn
@@ -50,7 +50,7 @@ namespace WP
             this.remove_btn.BackColor = System.Drawing.Color.Red;
             this.remove_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.remove_btn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.remove_btn.Location = new System.Drawing.Point(245, 377);
+            this.remove_btn.Location = new System.Drawing.Point(550, 460);
             this.remove_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.remove_btn.Name = "remove_btn";
             this.remove_btn.Size = new System.Drawing.Size(198, 45);
@@ -63,7 +63,7 @@ namespace WP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(711, 433);
+            this.ClientSize = new System.Drawing.Size(1204, 526);
             this.Controls.Add(this.remove_btn);
             this.Controls.Add(this.dataGridViewRemove);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

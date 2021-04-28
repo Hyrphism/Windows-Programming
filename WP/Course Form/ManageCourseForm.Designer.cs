@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.ID = new System.Windows.Forms.Label();
             this.Description = new System.Windows.Forms.Label();
             this.HoursNumber = new System.Windows.Forms.Label();
@@ -46,6 +47,9 @@
             this.listBoxCourse = new System.Windows.Forms.ListBox();
             this.labelTotalCourse = new System.Windows.Forms.Label();
             this.buttonClear = new System.Windows.Forms.Button();
+            this.labelSemester = new System.Windows.Forms.Label();
+            this.textBoxSemester = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +58,7 @@
             this.ID.AutoSize = true;
             this.ID.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ID.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.ID.Location = new System.Drawing.Point(168, 44);
+            this.ID.Location = new System.Drawing.Point(112, 44);
             this.ID.Name = "ID";
             this.ID.Size = new System.Drawing.Size(51, 32);
             this.ID.TabIndex = 0;
@@ -65,7 +69,7 @@
             this.Description.AutoSize = true;
             this.Description.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Description.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Description.Location = new System.Drawing.Point(59, 248);
+            this.Description.Location = new System.Drawing.Point(3, 254);
             this.Description.Name = "Description";
             this.Description.Size = new System.Drawing.Size(160, 32);
             this.Description.TabIndex = 1;
@@ -76,18 +80,18 @@
             this.HoursNumber.AutoSize = true;
             this.HoursNumber.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HoursNumber.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.HoursNumber.Location = new System.Drawing.Point(21, 178);
+            this.HoursNumber.Location = new System.Drawing.Point(63, 178);
             this.HoursNumber.Name = "HoursNumber";
-            this.HoursNumber.Size = new System.Drawing.Size(198, 32);
+            this.HoursNumber.Size = new System.Drawing.Size(100, 32);
             this.HoursNumber.TabIndex = 2;
-            this.HoursNumber.Text = "Hours Number:";
+            this.HoursNumber.Text = "Period:";
             // 
             // Label
             // 
             this.Label.AutoSize = true;
             this.Label.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Label.Location = new System.Drawing.Point(130, 112);
+            this.Label.Location = new System.Drawing.Point(74, 112);
             this.Label.Name = "Label";
             this.Label.Size = new System.Drawing.Size(89, 32);
             this.Label.TabIndex = 3;
@@ -96,39 +100,39 @@
             // textBoxID
             // 
             this.textBoxID.Font = new System.Drawing.Font("Arial", 13F);
-            this.textBoxID.Location = new System.Drawing.Point(236, 44);
+            this.textBoxID.Location = new System.Drawing.Point(174, 44);
             this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(293, 32);
+            this.textBoxID.Size = new System.Drawing.Size(110, 32);
             this.textBoxID.TabIndex = 4;
             // 
             // textBoxLabel
             // 
             this.textBoxLabel.Font = new System.Drawing.Font("Arial", 13F);
-            this.textBoxLabel.Location = new System.Drawing.Point(236, 112);
+            this.textBoxLabel.Location = new System.Drawing.Point(174, 112);
             this.textBoxLabel.Name = "textBoxLabel";
-            this.textBoxLabel.Size = new System.Drawing.Size(293, 32);
+            this.textBoxLabel.Size = new System.Drawing.Size(415, 32);
             this.textBoxLabel.TabIndex = 5;
             // 
             // textBoxDescription
             // 
             this.textBoxDescription.Font = new System.Drawing.Font("Arial", 13F);
-            this.textBoxDescription.Location = new System.Drawing.Point(236, 248);
+            this.textBoxDescription.Location = new System.Drawing.Point(174, 254);
             this.textBoxDescription.Multiline = true;
             this.textBoxDescription.Name = "textBoxDescription";
-            this.textBoxDescription.Size = new System.Drawing.Size(293, 160);
+            this.textBoxDescription.Size = new System.Drawing.Size(415, 160);
             this.textBoxDescription.TabIndex = 6;
             // 
             // numericUpDown1
             // 
             this.numericUpDown1.Font = new System.Drawing.Font("Arial", 13F);
-            this.numericUpDown1.Location = new System.Drawing.Point(236, 178);
+            this.numericUpDown1.Location = new System.Drawing.Point(174, 178);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             24,
             0,
             0,
             0});
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(293, 32);
+            this.numericUpDown1.Size = new System.Drawing.Size(415, 32);
             this.numericUpDown1.TabIndex = 7;
             // 
             // buttonFirst
@@ -225,6 +229,7 @@
             this.listBoxCourse.Size = new System.Drawing.Size(446, 472);
             this.listBoxCourse.TabIndex = 17;
             this.listBoxCourse.SelectedIndexChanged += new System.EventHandler(this.listBoxCourse_SelectedIndexChanged);
+            this.listBoxCourse.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBoxCourse_MouseDoubleClick);
             // 
             // labelTotalCourse
             // 
@@ -241,7 +246,7 @@
             // 
             // buttonClear
             // 
-            this.buttonClear.BackColor = System.Drawing.Color.Red;
+            this.buttonClear.BackColor = System.Drawing.Color.DarkOrange;
             this.buttonClear.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.buttonClear.Location = new System.Drawing.Point(477, 528);
             this.buttonClear.Name = "buttonClear";
@@ -251,12 +256,39 @@
             this.buttonClear.UseVisualStyleBackColor = false;
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
+            // labelSemester
+            // 
+            this.labelSemester.AutoSize = true;
+            this.labelSemester.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSemester.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelSemester.Location = new System.Drawing.Point(299, 44);
+            this.labelSemester.Name = "labelSemester";
+            this.labelSemester.Size = new System.Drawing.Size(139, 32);
+            this.labelSemester.TabIndex = 20;
+            this.labelSemester.Text = "Semester:";
+            // 
+            // textBoxSemester
+            // 
+            this.textBoxSemester.Font = new System.Drawing.Font("Arial", 13F);
+            this.textBoxSemester.Location = new System.Drawing.Point(444, 44);
+            this.textBoxSemester.Name = "textBoxSemester";
+            this.textBoxSemester.Size = new System.Drawing.Size(145, 32);
+            this.textBoxSemester.TabIndex = 21;
+            this.toolTip1.SetToolTip(this.textBoxSemester, "####-####");
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.ForeColor = System.Drawing.Color.Silver;
+            this.toolTip1.IsBalloon = true;
+            // 
             // ManageCourseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1145, 638);
+            this.Controls.Add(this.textBoxSemester);
+            this.Controls.Add(this.labelSemester);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.labelTotalCourse);
             this.Controls.Add(this.listBoxCourse);
@@ -291,7 +323,6 @@
         private System.Windows.Forms.Label HoursNumber;
         private System.Windows.Forms.Label Label;
         private System.Windows.Forms.TextBox textBoxID;
-        private System.Windows.Forms.TextBox textBoxLabel;
         private System.Windows.Forms.TextBox textBoxDescription;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Button buttonFirst;
@@ -304,5 +335,9 @@
         private System.Windows.Forms.Label labelTotalCourse;
         private System.Windows.Forms.ListBox listBoxCourse;
         private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.Label labelSemester;
+        private System.Windows.Forms.TextBox textBoxSemester;
+        private System.Windows.Forms.TextBox textBoxLabel;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

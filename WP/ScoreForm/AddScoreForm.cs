@@ -14,16 +14,13 @@ namespace WP
 {
     public partial class AddScoreForm : Form
     {
-        Course course;
-        Student student;
-        Score score;
+        Course course = new Course();
+        Student student = new Student();
+        Score score = new Score();
         DataTable labelTable;
         public AddScoreForm()
         {
             InitializeComponent();
-            student = new Student();
-            score = new Score();
-            course = new Course();
         }
         private void AddScoreForm_Load(object sender, EventArgs e)
         {
@@ -31,6 +28,9 @@ namespace WP
             string query2 = "Select id, label From Course";
 
             DataGridViewStudent.DataSource = student.GetTable(query1);
+            DataGridViewStudent.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            DataGridViewStudent.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            DataGridViewStudent.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             labelTable = course.GetTable(query2);
 

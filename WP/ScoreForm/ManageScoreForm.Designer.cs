@@ -168,6 +168,7 @@ namespace WP
             this.avg_btn.TabIndex = 17;
             this.avg_btn.Text = "Average Score By Course";
             this.avg_btn.UseVisualStyleBackColor = false;
+            this.avg_btn.Click += new System.EventHandler(this.avg_btn_Click);
             // 
             // showStudent_btn
             // 
@@ -194,20 +195,21 @@ namespace WP
             // dataGridViewShow
             // 
             this.dataGridViewShow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewShow.Location = new System.Drawing.Point(556, 55);
+            this.dataGridViewShow.Location = new System.Drawing.Point(527, 55);
             this.dataGridViewShow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewShow.Name = "dataGridViewShow";
             this.dataGridViewShow.RowHeadersWidth = 62;
             this.dataGridViewShow.RowTemplate.Height = 28;
-            this.dataGridViewShow.Size = new System.Drawing.Size(694, 442);
+            this.dataGridViewShow.Size = new System.Drawing.Size(783, 442);
             this.dataGridViewShow.TabIndex = 19;
+            this.dataGridViewShow.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewShow_CellContentClick);
             // 
             // ManageScoreForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1261, 507);
+            this.BackColor = System.Drawing.Color.SteelBlue;
+            this.ClientSize = new System.Drawing.Size(1316, 519);
             this.Controls.Add(this.dataGridViewShow);
             this.Controls.Add(this.showScore_btn);
             this.Controls.Add(this.showStudent_btn);

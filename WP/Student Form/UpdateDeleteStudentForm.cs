@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WP.Student_Form;
 
 namespace WP
 {
@@ -165,5 +166,10 @@ namespace WP
             }
         }
 
+        private void AddCourseButton_Click(object sender, EventArgs e)
+        {
+            AddCourseToStudent addCourseToStudent = new AddCourseToStudent();
+            addCourseToStudent.ShowDialog();
+        }
     }
 }

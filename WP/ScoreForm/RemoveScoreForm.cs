@@ -43,7 +43,13 @@ namespace WP
         }
         private void loadScore()
         {
-            dataGridViewRemove.DataSource = score.getAllScore();
+            string query = "select s.student_id, st.fname, st.lname, c.id as 'course_id' , c.label, s.student_score " +
+                           "from Score s " +
+                           "inner join Course c " +
+                           "on s.course_id = c.id " +
+                           "inner join Student st " +
+                           "on st.id = s.student_id";
+            dataGridViewRemove.DataSource = score.GetTable(query);
             dataGridViewRemove.RowTemplate.Height = 70;
             dataGridViewRemove.ReadOnly = true;
             dataGridViewRemove.AllowUserToAddRows = false;
@@ -51,7 +57,9 @@ namespace WP
             dataGridViewRemove.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dataGridViewRemove.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dataGridViewRemove.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewRemove.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewRemove.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewRemove.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewRemove.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
     }
 }

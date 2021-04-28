@@ -102,5 +102,55 @@ namespace WP
             DataTable table = GetTable(query);
             return Convert.ToDouble(table.Rows[0][0]);
         }
+
+        public DataTable GetAllStudent()
+        {
+            string query = "SELECT * FROM Student";
+            return this.GetTable(query);
+        }
+
+        public bool InsertSelectedCourse(int id, string course)
+        {
+            SqlCommand command = new SqlCommand("UPDATE Student SET selected_course=@course WHERE id=@id", db.getConnection);
+
+            command.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            command.Parameters.Add("@course", SqlDbType.NVarChar).Value = course;
+
+            db.openConnection();
+            if (command.ExecuteNonQuery() == 1)
+            {
+                db.closeConnection();
+                return true;
+            }
+            else
+            {
+                db.closeConnection();
+                return false;
+            }
+        }
+
+        public string GetSelectedCourses(int id)
+        {
+            string query = $"SELECT selected_course FROM Student WHERE id={id}";
+            return this.GetTable(query).Rows[0].Field<string>(0);
+        }
+
+        public DataTable GetStudentByID(int id = 0)
+        {
+            string query = $"SELECT * FROM Student WHERE id={id}";
+            return this.GetTable(query);
+        }
+
+        public bool CheckValidCourse(string selectedCourse, string currCourse)
+        {
+            if (selectedCourse.Contains(currCourse))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }

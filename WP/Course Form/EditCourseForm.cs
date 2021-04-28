@@ -38,6 +38,7 @@ namespace WP.Course_Form
                 textBoxLabel.Text = table.Rows[0][1].ToString();
                 numericUpDown1.Value = Convert.ToInt32(table.Rows[0][2].ToString());
                 textBoxDescription.Text = table.Rows[0][3].ToString();
+                textBoxSemester.Text = table.Rows[0][4].ToString();
             }
             catch (Exception E)
             {
@@ -52,8 +53,9 @@ namespace WP.Course_Form
             int period = Convert.ToInt32(numericUpDown1.Value);
             string description = textBoxDescription.Text;
             int id = Convert.ToInt32(comboBoxSelect.Text);
+            string semester = textBoxSemester.Text;
 
-            if (course.UpdateCourse(id, label, period, description))
+            if (course.UpdateCourse(id, label, period, description, semester))
             {
                 MessageBox.Show("Course Updated", "Edit Course", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

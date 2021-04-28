@@ -37,13 +37,15 @@
             this.textBoxPeriod = new System.Windows.Forms.TextBox();
             this.textBoxLabel = new System.Windows.Forms.TextBox();
             this.buttonAdd = new System.Windows.Forms.Button();
+            this.labelSemester = new System.Windows.Forms.Label();
+            this.comboBoxSemester = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // courseID
             // 
             this.courseID.AutoSize = true;
             this.courseID.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.courseID.Location = new System.Drawing.Point(60, 33);
+            this.courseID.Location = new System.Drawing.Point(39, 33);
             this.courseID.Name = "courseID";
             this.courseID.Size = new System.Drawing.Size(156, 32);
             this.courseID.TabIndex = 0;
@@ -53,7 +55,7 @@
             // 
             this.courseLabel.AutoSize = true;
             this.courseLabel.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.courseLabel.Location = new System.Drawing.Point(119, 102);
+            this.courseLabel.Location = new System.Drawing.Point(98, 102);
             this.courseLabel.Name = "courseLabel";
             this.courseLabel.Size = new System.Drawing.Size(97, 32);
             this.courseLabel.TabIndex = 1;
@@ -63,7 +65,7 @@
             // 
             this.coursePeriod.AutoSize = true;
             this.coursePeriod.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.coursePeriod.Location = new System.Drawing.Point(105, 174);
+            this.coursePeriod.Location = new System.Drawing.Point(84, 174);
             this.coursePeriod.Name = "coursePeriod";
             this.coursePeriod.Size = new System.Drawing.Size(111, 32);
             this.coursePeriod.TabIndex = 2;
@@ -73,7 +75,7 @@
             // 
             this.courseDescription.AutoSize = true;
             this.courseDescription.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.courseDescription.Location = new System.Drawing.Point(39, 252);
+            this.courseDescription.Location = new System.Drawing.Point(18, 252);
             this.courseDescription.Name = "courseDescription";
             this.courseDescription.Size = new System.Drawing.Size(177, 32);
             this.courseDescription.TabIndex = 3;
@@ -82,40 +84,40 @@
             // textBoxCourseID
             // 
             this.textBoxCourseID.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCourseID.Location = new System.Drawing.Point(235, 33);
+            this.textBoxCourseID.Location = new System.Drawing.Point(201, 35);
             this.textBoxCourseID.Name = "textBoxCourseID";
-            this.textBoxCourseID.Size = new System.Drawing.Size(313, 32);
+            this.textBoxCourseID.Size = new System.Drawing.Size(116, 32);
             this.textBoxCourseID.TabIndex = 4;
             // 
             // textBoxDescription
             // 
             this.textBoxDescription.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDescription.Location = new System.Drawing.Point(235, 252);
+            this.textBoxDescription.Location = new System.Drawing.Point(201, 252);
             this.textBoxDescription.Name = "textBoxDescription";
-            this.textBoxDescription.Size = new System.Drawing.Size(313, 32);
+            this.textBoxDescription.Size = new System.Drawing.Size(396, 32);
             this.textBoxDescription.TabIndex = 5;
             // 
             // textBoxPeriod
             // 
             this.textBoxPeriod.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPeriod.Location = new System.Drawing.Point(235, 174);
+            this.textBoxPeriod.Location = new System.Drawing.Point(201, 174);
             this.textBoxPeriod.Name = "textBoxPeriod";
-            this.textBoxPeriod.Size = new System.Drawing.Size(313, 32);
+            this.textBoxPeriod.Size = new System.Drawing.Size(396, 32);
             this.textBoxPeriod.TabIndex = 6;
             // 
             // textBoxLabel
             // 
             this.textBoxLabel.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLabel.Location = new System.Drawing.Point(235, 102);
+            this.textBoxLabel.Location = new System.Drawing.Point(201, 102);
             this.textBoxLabel.Name = "textBoxLabel";
-            this.textBoxLabel.Size = new System.Drawing.Size(313, 32);
+            this.textBoxLabel.Size = new System.Drawing.Size(396, 32);
             this.textBoxLabel.TabIndex = 7;
             // 
             // buttonAdd
             // 
             this.buttonAdd.BackColor = System.Drawing.Color.LightCoral;
             this.buttonAdd.Font = new System.Drawing.Font("Arial", 23F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdd.Location = new System.Drawing.Point(186, 317);
+            this.buttonAdd.Location = new System.Drawing.Point(221, 314);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(232, 73);
             this.buttonAdd.TabIndex = 8;
@@ -123,12 +125,33 @@
             this.buttonAdd.UseVisualStyleBackColor = false;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
+            // labelSemester
+            // 
+            this.labelSemester.AutoSize = true;
+            this.labelSemester.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSemester.Location = new System.Drawing.Point(323, 35);
+            this.labelSemester.Name = "labelSemester";
+            this.labelSemester.Size = new System.Drawing.Size(149, 32);
+            this.labelSemester.TabIndex = 9;
+            this.labelSemester.Text = "Semester:";
+            // 
+            // comboBoxSemester
+            // 
+            this.comboBoxSemester.Font = new System.Drawing.Font("Arial", 13F);
+            this.comboBoxSemester.FormattingEnabled = true;
+            this.comboBoxSemester.Location = new System.Drawing.Point(467, 32);
+            this.comboBoxSemester.Name = "comboBoxSemester";
+            this.comboBoxSemester.Size = new System.Drawing.Size(130, 33);
+            this.comboBoxSemester.TabIndex = 10;
+            // 
             // AddCourseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Salmon;
-            this.ClientSize = new System.Drawing.Size(600, 416);
+            this.ClientSize = new System.Drawing.Size(622, 416);
+            this.Controls.Add(this.comboBoxSemester);
+            this.Controls.Add(this.labelSemester);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.textBoxLabel);
             this.Controls.Add(this.textBoxPeriod);
@@ -157,5 +180,7 @@
         private System.Windows.Forms.TextBox textBoxPeriod;
         private System.Windows.Forms.TextBox textBoxLabel;
         private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.Label labelSemester;
+        private System.Windows.Forms.ComboBox comboBoxSemester;
     }
 }

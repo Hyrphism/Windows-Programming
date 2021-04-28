@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WP.Course_Form;
+using WP.ResultForm;
 
 namespace WP
 {
@@ -105,6 +106,23 @@ namespace WP
         {
             ManageScoreForm manageScoreForm = new ManageScoreForm();
             manageScoreForm.ShowDialog();
+        }
+
+        private void aVGResultByScoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AvgResultByScoreForm avgResultByScoreForm = new AvgResultByScoreForm();
+            avgResultByScoreForm.ShowDialog();
+        }
+
+        private void staticsResultToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StaticsResultForm staticsResultForm = new StaticsResultForm();
+            staticsResultForm.ShowDialog();
+        }
+
+        private void manageStudentFormToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -134,7 +134,7 @@ namespace WP
             this.DataGridViewStudent.Name = "DataGridViewStudent";
             this.DataGridViewStudent.RowHeadersWidth = 62;
             this.DataGridViewStudent.RowTemplate.Height = 28;
-            this.DataGridViewStudent.Size = new System.Drawing.Size(497, 338);
+            this.DataGridViewStudent.Size = new System.Drawing.Size(506, 338);
             this.DataGridViewStudent.TabIndex = 7;
             this.DataGridViewStudent.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.studentInfo_dgv_CellContentClick);
             // 
@@ -157,7 +157,7 @@ namespace WP
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1051, 416);
+            this.ClientSize = new System.Drawing.Size(1050, 416);
             this.Controls.Add(this.add_btn);
             this.Controls.Add(this.DataGridViewStudent);
             this.Controls.Add(this.score_tb);

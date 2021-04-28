@@ -56,12 +56,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Course.cs" />
+    <Compile Include="Classes\Result.cs" />
     <Compile Include="Classes\Score.cs" />
     <Compile Include="Course Form\AddCourseForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Course Form\AddCourseForm.Designer.cs">
       <DependentUpon>AddCourseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Course Form\CourseStudentListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Course Form\CourseStudentListForm.Designer.cs">
+      <DependentUpon>CourseStudentListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Course Form\EditCourseForm.cs">
       <SubType>Form</SubType>
@@ -87,6 +94,18 @@
     <Compile Include="Course Form\RemoveCourseForm.Designer.cs">
       <DependentUpon>RemoveCourseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ResultForm\AvgResultByScoreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultForm\AvgResultByScoreForm.Designer.cs">
+      <DependentUpon>AvgResultByScoreForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResultForm\StaticsResultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultForm\StaticsResultForm.Designer.cs">
+      <DependentUpon>StaticsResultForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ScoreForm\AddScoreForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +129,12 @@
     </Compile>
     <Compile Include="ScoreForm\RemoveScoreForm.Designer.cs">
       <DependentUpon>RemoveScoreForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student Form\AddCourseToStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student Form\AddCourseToStudent.Designer.cs">
+      <DependentUpon>AddCourseToStudent.cs</DependentUpon>
     </Compile>
     <Compile Include="Student Form\StaticsForm.cs">
       <SubType>Form</SubType>
@@ -166,6 +191,9 @@
     <EmbeddedResource Include="Course Form\AddCourseForm.resx">
       <DependentUpon>AddCourseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Course Form\CourseStudentListForm.resx">
+      <DependentUpon>CourseStudentListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Course Form\EditCourseForm.resx">
       <DependentUpon>EditCourseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,6 +206,12 @@
     <EmbeddedResource Include="Course Form\RemoveCourseForm.resx">
       <DependentUpon>RemoveCourseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ResultForm\AvgResultByScoreForm.resx">
+      <DependentUpon>AvgResultByScoreForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResultForm\StaticsResultForm.resx">
+      <DependentUpon>StaticsResultForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ScoreForm\AddScoreForm.resx">
       <DependentUpon>AddScoreForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -189,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ScoreForm\RemoveScoreForm.resx">
       <DependentUpon>RemoveScoreForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student Form\AddCourseToStudent.resx">
+      <DependentUpon>AddCourseToStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student Form\PrintStudentForm.resx">
       <DependentUpon>PrintStudentForm.cs</DependentUpon>

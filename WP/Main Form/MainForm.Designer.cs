@@ -47,6 +47,9 @@
             this.removeScoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.averageScoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageScoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rESULTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aVGResultByScoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.staticsResultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +59,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sTUDENTToolStripMenuItem,
             this.cOURSEToolStripMenuItem,
-            this.sCOREToolStripMenuItem});
+            this.sCOREToolStripMenuItem,
+            this.rESULTToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 34);
@@ -115,6 +119,7 @@
             this.manageStudentFormToolStripMenuItem.Name = "manageStudentFormToolStripMenuItem";
             this.manageStudentFormToolStripMenuItem.Size = new System.Drawing.Size(301, 26);
             this.manageStudentFormToolStripMenuItem.Text = "Manage Student Form";
+            this.manageStudentFormToolStripMenuItem.Click += new System.EventHandler(this.manageStudentFormToolStripMenuItem_Click);
             // 
             // printToolStripMenuItem
             // 
@@ -212,10 +217,35 @@
             this.manageScoreToolStripMenuItem.Text = "Manage Score";
             this.manageScoreToolStripMenuItem.Click += new System.EventHandler(this.manageScoreToolStripMenuItem_Click);
             // 
+            // rESULTToolStripMenuItem
+            // 
+            this.rESULTToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aVGResultByScoreToolStripMenuItem,
+            this.staticsResultToolStripMenuItem});
+            this.rESULTToolStripMenuItem.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold);
+            this.rESULTToolStripMenuItem.Name = "rESULTToolStripMenuItem";
+            this.rESULTToolStripMenuItem.Size = new System.Drawing.Size(114, 30);
+            this.rESULTToolStripMenuItem.Text = "RESULT";
+            // 
+            // aVGResultByScoreToolStripMenuItem
+            // 
+            this.aVGResultByScoreToolStripMenuItem.Name = "aVGResultByScoreToolStripMenuItem";
+            this.aVGResultByScoreToolStripMenuItem.Size = new System.Drawing.Size(310, 30);
+            this.aVGResultByScoreToolStripMenuItem.Text = "AVG Result by Score";
+            this.aVGResultByScoreToolStripMenuItem.Click += new System.EventHandler(this.aVGResultByScoreToolStripMenuItem_Click);
+            // 
+            // staticsResultToolStripMenuItem
+            // 
+            this.staticsResultToolStripMenuItem.Name = "staticsResultToolStripMenuItem";
+            this.staticsResultToolStripMenuItem.Size = new System.Drawing.Size(310, 30);
+            this.staticsResultToolStripMenuItem.Text = "Statics Result";
+            this.staticsResultToolStripMenuItem.Click += new System.EventHandler(this.staticsResultToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -250,5 +280,8 @@
         private System.Windows.Forms.ToolStripMenuItem removeScoreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem averageScoreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageScoreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rESULTToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aVGResultByScoreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem staticsResultToolStripMenuItem;
     }
 }

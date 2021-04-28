@@ -39,6 +39,8 @@
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.labelSemester = new System.Windows.Forms.Label();
+            this.textBoxSemester = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,7 +48,7 @@
             // 
             this.comboBoxSelect.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxSelect.FormattingEnabled = true;
-            this.comboBoxSelect.Location = new System.Drawing.Point(279, 49);
+            this.comboBoxSelect.Location = new System.Drawing.Point(279, 25);
             this.comboBoxSelect.Name = "comboBoxSelect";
             this.comboBoxSelect.Size = new System.Drawing.Size(351, 33);
             this.comboBoxSelect.TabIndex = 0;
@@ -56,7 +58,7 @@
             // 
             this.selectCourse.AutoSize = true;
             this.selectCourse.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.selectCourse.Location = new System.Drawing.Point(47, 50);
+            this.selectCourse.Location = new System.Drawing.Point(47, 26);
             this.selectCourse.Name = "selectCourse";
             this.selectCourse.Size = new System.Drawing.Size(208, 32);
             this.selectCourse.TabIndex = 1;
@@ -65,7 +67,7 @@
             // textBoxLabel
             // 
             this.textBoxLabel.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLabel.Location = new System.Drawing.Point(279, 118);
+            this.textBoxLabel.Location = new System.Drawing.Point(279, 84);
             this.textBoxLabel.Name = "textBoxLabel";
             this.textBoxLabel.Size = new System.Drawing.Size(351, 32);
             this.textBoxLabel.TabIndex = 5;
@@ -74,7 +76,7 @@
             // 
             this.label.AutoSize = true;
             this.label.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.Location = new System.Drawing.Point(158, 118);
+            this.label.Location = new System.Drawing.Point(158, 84);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(97, 32);
             this.label.TabIndex = 6;
@@ -84,7 +86,7 @@
             // 
             this.period.AutoSize = true;
             this.period.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.period.Location = new System.Drawing.Point(144, 190);
+            this.period.Location = new System.Drawing.Point(144, 198);
             this.period.Name = "period";
             this.period.Size = new System.Drawing.Size(111, 32);
             this.period.TabIndex = 7;
@@ -103,7 +105,7 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(279, 190);
+            this.numericUpDown1.Location = new System.Drawing.Point(279, 198);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(143, 32);
             this.numericUpDown1.TabIndex = 9;
@@ -135,12 +137,32 @@
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Select Hours";
             // 
+            // labelSemester
+            // 
+            this.labelSemester.AutoSize = true;
+            this.labelSemester.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSemester.Location = new System.Drawing.Point(106, 142);
+            this.labelSemester.Name = "labelSemester";
+            this.labelSemester.Size = new System.Drawing.Size(149, 32);
+            this.labelSemester.TabIndex = 12;
+            this.labelSemester.Text = "Semester:";
+            // 
+            // textBoxSemester
+            // 
+            this.textBoxSemester.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSemester.Location = new System.Drawing.Point(279, 144);
+            this.textBoxSemester.Name = "textBoxSemester";
+            this.textBoxSemester.Size = new System.Drawing.Size(351, 32);
+            this.textBoxSemester.TabIndex = 13;
+            // 
             // EditCourseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Blue;
             this.ClientSize = new System.Drawing.Size(800, 506);
+            this.Controls.Add(this.textBoxSemester);
+            this.Controls.Add(this.labelSemester);
             this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.textBoxDescription);
             this.Controls.Add(this.numericUpDown1);
@@ -171,5 +193,7 @@
         private System.Windows.Forms.TextBox textBoxDescription;
         private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label labelSemester;
+        private System.Windows.Forms.TextBox textBoxSemester;
     }
 }

@@ -84,33 +84,46 @@ namespace WP
         }
         private void loadScore()
         {
-            dataGridViewShow.DataSource = score.getAllScore();
-        }
-
-        private void showStudent_btn_Click(object sender, EventArgs e)
-        {
-            string query = "SELECT id, fname, lname FROM Student";
+            string query = "SELECT id, fname, lname, bdate FROM Student";
             dataGridViewShow.DataSource = student.GetTable(query);
             dataGridViewShow.RowTemplate.Height = 70;
             dataGridViewShow.ReadOnly = true;
             dataGridViewShow.AllowUserToAddRows = false;
 
-            dataGridViewShow.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewShow.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewShow.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewShow.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
+
+        private void showStudent_btn_Click(object sender, EventArgs e)
+        {
+            this.loadScore();
         }
 
         private void showScore_btn_Click(object sender, EventArgs e)
         {
-            dataGridViewShow.DataSource = score.getAllScore();
+            string query = "select s.student_id, st.fname, st.lname, c.id as 'course_id' , c.label, s.student_score " +
+               "from Score s " +
+               "inner join Course c " +
+               "on s.course_id = c.id " +
+               "inner join Student st " +
+               "on st.id = s.student_id";
+            dataGridViewShow.DataSource = score.GetTable(query);
             dataGridViewShow.RowTemplate.Height = 70;
             dataGridViewShow.ReadOnly = true;
             dataGridViewShow.AllowUserToAddRows = false;
+        }
 
-            dataGridViewShow.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewShow.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewShow.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewShow.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        private void avg_btn_Click(object sender, EventArgs e)
+        {
+            AverageScore averageScore = new AverageScore();
+            averageScore.ShowDialog();
+        }
+
+        private void dataGridViewShow_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            id_tb.Text = dataGridViewShow.CurrentRow.Cells[0].Value.ToString();
+            cource_cb.Text = "";
+            score_tb.Text = "";
+            description_tb.Text = "";
         }
     }
 }

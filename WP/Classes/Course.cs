@@ -13,15 +13,16 @@ namespace WP.Classes
     {
         MY_DB db = new MY_DB();
 
-        public bool InsertCourse(int id, string label, int period, string description)
+        public bool InsertCourse(int id, string label, int period, string description, string semester)
         {
-            SqlCommand command = new SqlCommand("INSERT INTO Course (id, label, period, description) "
-                                              + "VALUES (@id, @label, @period, @description)", db.getConnection);
+            SqlCommand command = new SqlCommand("INSERT INTO Course (id, label, period, description, semester) "
+                                              + "VALUES (@id, @label, @period, @description, @semester)", db.getConnection);
 
             command.Parameters.Add("@id", SqlDbType.Int).Value = id;
             command.Parameters.Add("@label", SqlDbType.VarChar).Value = label;
             command.Parameters.Add("@period", SqlDbType.Int).Value = period;
             command.Parameters.Add("@description", SqlDbType.Text).Value = description;
+            command.Parameters.Add("@semester", SqlDbType.VarChar).Value = semester;
 
             db.openConnection();
             if (command.ExecuteNonQuery() == 1)
@@ -75,20 +76,22 @@ namespace WP.Classes
             }
         }
 
-        public bool UpdateCourse(int id, string label, int period, string description)
+        public bool UpdateCourse(int id, string label, int period, string description, string semester)
         {
             SqlCommand command = new SqlCommand(
                                 "UPDATE Course" +
                                 " SET " +
                                 "label = @label," +
                                 "period = @period," +
-                                "description = @description" +
+                                "description = @description, " +
+                                "semester = @semester" +
                                 " WHERE id = @ID"
                                 , db.getConnection);
 
             command.Parameters.Add("@label", SqlDbType.NVarChar).Value = label;
             command.Parameters.Add("@period", SqlDbType.Int).Value = period;
             command.Parameters.Add("@description", SqlDbType.Text).Value = description;
+            command.Parameters.Add("@semester", SqlDbType.NVarChar).Value = semester;
             command.Parameters.Add("@ID", SqlDbType.Int).Value = id;
 
             db.openConnection();
@@ -164,6 +167,58 @@ namespace WP.Classes
                            "WHERE c.id = s.course_id " +
                            "GROUP BY c.label";
             return this.GetTable(query);
+        }
+
+        public DataTable GetCourseBySemester(string semester)
+        {
+            string query = $"SELECT label FROM Course WHERE semester = '{semester}'";
+            return this.GetTable(query);
+        }
+
+        public bool CheckValidCourseInSemester(string course, string semester)
+        {
+            SqlCommand command = new SqlCommand("SELECT * FROM Course WHERE semester=@semester and label=@course", db.getConnection);
+
+            command.Parameters.Add("@semester", SqlDbType.NVarChar).Value = semester;
+            command.Parameters.Add("@course", SqlDbType.NVarChar).Value = course;
+
+
+            db.openConnection();
+            if (command.ExecuteNonQuery() == 1)
+            {
+                db.closeConnection();
+                return true;
+            }
+            else
+            {
+                db.closeConnection();
+                return false;
+            }
+        }
+
+        public DataTable CourseStudentList(string label, string semester)
+        {
+            SqlCommand command = new SqlCommand(
+                "                                SELECT ROW_NUMBER() OVER(ORDER BY s.id) AS STT," +
+                "                                       s.id," +
+                "                                       fname," +
+                "                                       lname," +
+                "                                       CAST(bdate as DATE) as bdate," +
+                "                                       gender," +
+                "                                       phone" +
+                "                                FROM Student s, Course c " +
+                "                                WHERE selected_course LIKE '%' + @label + '%' " +
+                "                                  AND semester = @semester " +
+                "                                  AND label = @label", 
+                db.getConnection);
+
+            command.Parameters.Add("@label", SqlDbType.NVarChar).Value = label;
+            command.Parameters.Add("@semester", SqlDbType.NVarChar).Value = semester;
+
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
         }
     }
 }

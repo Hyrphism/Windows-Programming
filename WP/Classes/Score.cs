@@ -10,6 +10,8 @@ namespace WP
 {
     class Score
     {
+        MY_DB db = new MY_DB();
+
         private float studentScore;
         public int StudentID { get; set; }
         public int CourseID { get; set; }
@@ -33,9 +35,22 @@ namespace WP
         {
 
         }
+
+        public DataTable GetTable(string query)
+        {
+            db.openConnection();
+            SqlCommand command = new SqlCommand(query, db.getConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.SelectCommand = command;
+            DataSet dataSet = new DataSet();
+            adapter.Fill(dataSet, "Course");
+            db.closeConnection();
+
+            DataTable table = dataSet.Tables["Course"];
+            return table;
+        }
         public bool AddThisScore()
         {
-            MY_DB db = new MY_DB();
             try
             {
                 SqlCommand command = new SqlCommand("INSERT INTO Score (student_id, course_id, student_score, description)" +
@@ -73,7 +88,6 @@ namespace WP
         }
         public bool UpdateThisScore()
         {
-            MY_DB db = new MY_DB();
             try
             {
                 SqlCommand command = new SqlCommand(
@@ -112,7 +126,6 @@ namespace WP
         }
         public bool RemoveThisScore()
         {
-            MY_DB db = new MY_DB();
             try
             {
                 SqlCommand command = new SqlCommand(

@@ -14,6 +14,8 @@ namespace WP.Course_Form
 {
     public partial class AddCourseForm : Form
     {
+        Course course = new Course();
+
         public AddCourseForm()
         {
             InitializeComponent();
@@ -21,21 +23,30 @@ namespace WP.Course_Form
 
         private void AddCourse_Load(object sender, EventArgs e)
         {
-
+            int year = 2019;
+            for (int i = 0; i < 10; i++)
+            {
+                comboBoxSemester.Items.Add($"{year}-{year + 1}");
+                year += 1;
+            }
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            Course course = new Course();
 
             int id = Convert.ToInt32(textBoxCourseID.Text);
             string label = textBoxLabel.Text;
             int period = Convert.ToInt32(textBoxPeriod.Text);
             string description = textBoxDescription.Text;
+            string semester = comboBoxSemester.Text;
 
             if (period < 1 || period > 24)
             {
                 MessageBox.Show("The course period must be between 1 and 24 hours", "Invalid course period", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (comboBoxSemester.Text == "")
+            {
+                MessageBox.Show("Invalid Semester", "Invalid course period", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (label.Trim() == "")
             {
@@ -43,7 +54,7 @@ namespace WP.Course_Form
             }
             else if (course.CheckCourseName(label, id))
             {
-                if (course.InsertCourse(id, label, period, description))
+                if (course.InsertCourse(id, label, period, description, semester))
                 {
                     MessageBox.Show("New course inserted", "Add course", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

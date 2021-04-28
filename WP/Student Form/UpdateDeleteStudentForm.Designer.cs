@@ -50,6 +50,7 @@
             this.UploadButton = new System.Windows.Forms.Button();
             this.EditButton = new System.Windows.Forms.Button();
             this.RemoveButton = new System.Windows.Forms.Button();
+            this.AddCourseButton = new System.Windows.Forms.Button();
             this.genderBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
@@ -249,6 +250,7 @@
             // 
             // pictureBox
             // 
+            this.pictureBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.pictureBox.Location = new System.Drawing.Point(663, 215);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(304, 189);
@@ -281,7 +283,7 @@
             this.EditButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.EditButton.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EditButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.EditButton.Location = new System.Drawing.Point(228, 490);
+            this.EditButton.Location = new System.Drawing.Point(125, 490);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(196, 78);
             this.EditButton.TabIndex = 18;
@@ -295,7 +297,7 @@
             this.RemoveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.RemoveButton.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RemoveButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.RemoveButton.Location = new System.Drawing.Point(504, 490);
+            this.RemoveButton.Location = new System.Drawing.Point(367, 490);
             this.RemoveButton.Name = "RemoveButton";
             this.RemoveButton.Size = new System.Drawing.Size(196, 78);
             this.RemoveButton.TabIndex = 19;
@@ -303,12 +305,27 @@
             this.RemoveButton.UseVisualStyleBackColor = false;
             this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
+            // AddCourseButton
+            // 
+            this.AddCourseButton.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.AddCourseButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.AddCourseButton.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddCourseButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.AddCourseButton.Location = new System.Drawing.Point(614, 490);
+            this.AddCourseButton.Name = "AddCourseButton";
+            this.AddCourseButton.Size = new System.Drawing.Size(196, 78);
+            this.AddCourseButton.TabIndex = 20;
+            this.AddCourseButton.Text = "Add Course";
+            this.AddCourseButton.UseVisualStyleBackColor = false;
+            this.AddCourseButton.Click += new System.EventHandler(this.AddCourseButton_Click);
+            // 
             // UpdateDeleteStudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(979, 592);
+            this.Controls.Add(this.AddCourseButton);
             this.Controls.Add(this.RemoveButton);
             this.Controls.Add(this.EditButton);
             this.Controls.Add(this.UploadButton);
@@ -364,5 +381,6 @@
         public System.Windows.Forms.RadioButton maleButton;
         public System.Windows.Forms.PictureBox pictureBox;
         public System.Windows.Forms.TextBox textBoxAddress;
+        private System.Windows.Forms.Button AddCourseButton;
     }
 }
