@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WP.ContactForm;
 
 namespace WP
 {
@@ -17,11 +18,18 @@ namespace WP
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Login_Form login_Form = new Login_Form();
+            LoginForm login_Form = new LoginForm();
 
             if (login_Form.ShowDialog() == DialogResult.OK)
             {
-                Application.Run(new MainForm());
+                if (login_Form.radioButtonStudent.Checked == true)
+                {
+                    Application.Run(new MainForm());
+                }
+                else
+                {
+                    Application.Run(new MainContactForm());
+                }
             }
             else
             {

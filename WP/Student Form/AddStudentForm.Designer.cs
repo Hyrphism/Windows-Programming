@@ -63,7 +63,6 @@
             this.label1.Size = new System.Drawing.Size(134, 27);
             this.label1.TabIndex = 0;
             this.label1.Text = "Student ID:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -75,7 +74,6 @@
             this.label2.Size = new System.Drawing.Size(136, 27);
             this.label2.TabIndex = 1;
             this.label2.Text = "Fisrt Name:";
-            this.label2.Click += new System.EventHandler(this.label2_Click_1);
             // 
             // label3
             // 
@@ -150,7 +148,6 @@
             this.textBoxStudentID.Name = "textBoxStudentID";
             this.textBoxStudentID.Size = new System.Drawing.Size(259, 28);
             this.textBoxStudentID.TabIndex = 8;
-            this.textBoxStudentID.TextChanged += new System.EventHandler(this.textBoxStudentID_TextChanged);
             // 
             // textBoxFname
             // 
@@ -174,7 +171,6 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(259, 22);
             this.dateTimePicker1.TabIndex = 11;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // groupBox1
             // 
@@ -234,7 +230,6 @@
             this.PictureStudent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictureStudent.TabIndex = 15;
             this.PictureStudent.TabStop = false;
-            this.PictureStudent.Click += new System.EventHandler(this.PictureStudent_Click);
             // 
             // buttonUploadImage
             // 

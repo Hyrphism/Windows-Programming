@@ -1,6 +1,6 @@
 ﻿namespace WP
 {
-    partial class RegisterForm
+    partial class RegisterStudentForm
     {
         /// <summary>
         /// Required designer variable.
@@ -152,6 +152,7 @@
             this.Controls.Add(this.registerLabel);
             this.Name = "RegisterForm";
             this.Text = "RegisterForm";
+            this.Load += new System.EventHandler(this.RegisterForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

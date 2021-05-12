@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace WP
 {
-    public partial class RegisterForm : Form
+    public partial class RegisterStudentForm : Form
     {
-        public RegisterForm()
+        public RegisterStudentForm()
         {
             InitializeComponent();
         }
@@ -55,6 +55,11 @@ namespace WP
         private void cancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void RegisterForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

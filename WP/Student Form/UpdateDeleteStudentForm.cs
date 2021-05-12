@@ -25,11 +25,6 @@ namespace WP
 
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         Student student = new Student();
         private void Find_Click(object sender, EventArgs e)
         {
@@ -61,10 +56,6 @@ namespace WP
             {
                 MessageBox.Show("not found", "Find Student", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-        }
-
-        private void textBoxID_TextChanged(object sender, EventArgs e)
-        {
         }
 
         private void UploadButton_Click(object sender, EventArgs e)

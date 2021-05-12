@@ -41,6 +41,7 @@
       <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -55,9 +56,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Contact.cs" />
     <Compile Include="Classes\Course.cs" />
-    <Compile Include="Classes\Result.cs" />
+    <Compile Include="Classes\Global.cs" />
+    <Compile Include="Classes\Group.cs" />
     <Compile Include="Classes\Score.cs" />
+    <Compile Include="Classes\User.cs" />
+    <Compile Include="ContactForm\AddContactForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContactForm\AddContactForm.Designer.cs">
+      <DependentUpon>AddContactForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContactForm\EditContactForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContactForm\EditContactForm.Designer.cs">
+      <DependentUpon>EditContactForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContactForm\SelectContactForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContactForm\SelectContactForm.Designer.cs">
+      <DependentUpon>SelectContactForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContactForm\ShowFullContactForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContactForm\ShowFullContactForm.Designer.cs">
+      <DependentUpon>ShowFullContactForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\MainContactForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\MainContactForm.Designer.cs">
+      <DependentUpon>MainContactForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Course Form\AddCourseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,20 +194,20 @@
     <Compile Include="LoginForm\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main Form\MainForm.cs">
+    <Compile Include="MainForm\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main Form\MainForm.Designer.cs">
+    <Compile Include="MainForm\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Database\MY_DB.cs" />
     <Compile Include="Classes\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="LoginForm\RegisterForm.cs">
+    <Compile Include="LoginForm\RegisterStudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm\RegisterForm.Designer.cs">
-      <DependentUpon>RegisterForm.cs</DependentUpon>
+    <Compile Include="LoginForm\RegisterStudentForm.Designer.cs">
+      <DependentUpon>RegisterStudentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Student.cs" />
     <Compile Include="Student Form\StudentListForm.cs">
@@ -188,6 +222,24 @@
     <Compile Include="Student Form\UpdateDeleteStudentForm.Designer.cs">
       <DependentUpon>UpdateDeleteStudentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginForm\RegisterUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm\RegisterUserForm.Designer.cs">
+      <DependentUpon>RegisterUserForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ContactForm\AddContactForm.resx">
+      <DependentUpon>AddContactForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContactForm\EditContactForm.resx">
+      <DependentUpon>EditContactForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContactForm\SelectContactForm.resx">
+      <DependentUpon>SelectContactForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContactForm\ShowFullContactForm.resx">
+      <DependentUpon>ShowFullContactForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Course Form\AddCourseForm.resx">
       <DependentUpon>AddCourseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -205,6 +257,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Course Form\RemoveCourseForm.resx">
       <DependentUpon>RemoveCourseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm\RegisterUserForm.resx">
+      <DependentUpon>RegisterUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\MainContactForm.resx">
+      <DependentUpon>MainContactForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ResultForm\AvgResultByScoreForm.resx">
       <DependentUpon>AvgResultByScoreForm.cs</DependentUpon>
@@ -239,7 +297,7 @@
     <EmbeddedResource Include="LoginForm\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main Form\MainForm.resx">
+    <EmbeddedResource Include="MainForm\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -251,8 +309,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="LoginForm\RegisterForm.resx">
-      <DependentUpon>RegisterForm.cs</DependentUpon>
+    <EmbeddedResource Include="LoginForm\RegisterStudentForm.resx">
+      <DependentUpon>RegisterStudentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student Form\StudentListForm.resx">
       <DependentUpon>StudentListForm.cs</DependentUpon>

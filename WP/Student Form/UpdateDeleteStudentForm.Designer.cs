@@ -140,7 +140,6 @@
             this.textBoxID.Name = "textBoxID";
             this.textBoxID.Size = new System.Drawing.Size(132, 30);
             this.textBoxID.TabIndex = 7;
-            this.textBoxID.TextChanged += new System.EventHandler(this.textBoxID_TextChanged);
             // 
             // textBoxFname
             // 
@@ -175,7 +174,6 @@
             this.genderBox.Size = new System.Drawing.Size(298, 77);
             this.genderBox.TabIndex = 11;
             this.genderBox.TabStop = false;
-            this.genderBox.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // femaleButton
             // 

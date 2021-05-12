@@ -1,6 +1,6 @@
 ﻿namespace WP
 {
-    partial class Login_Form
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login_Form));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,6 +45,8 @@
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.radioButtonHumanResource = new System.Windows.Forms.RadioButton();
+            this.radioButtonStudent = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
@@ -59,7 +61,6 @@
             this.label1.Size = new System.Drawing.Size(282, 44);
             this.label1.TabIndex = 0;
             this.label1.Text = "Account Login";
-            this.label1.Click += new System.EventHandler(this.account_Login);
             // 
             // pictureBox1
             // 
@@ -70,7 +71,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.avatar);
             // 
             // label2
             // 
@@ -81,7 +81,6 @@
             this.label2.Size = new System.Drawing.Size(147, 32);
             this.label2.TabIndex = 3;
             this.label2.Text = "Username:";
-            this.label2.Click += new System.EventHandler(this.username);
             // 
             // label3
             // 
@@ -92,7 +91,6 @@
             this.label3.Size = new System.Drawing.Size(141, 32);
             this.label3.TabIndex = 4;
             this.label3.Text = "Password:";
-            this.label3.Click += new System.EventHandler(this.password);
             // 
             // textBoxUsername
             // 
@@ -103,8 +101,6 @@
             this.textBoxUsername.Size = new System.Drawing.Size(272, 36);
             this.textBoxUsername.TabIndex = 5;
             this.toolTip1.SetToolTip(this.textBoxUsername, "enter your username");
-            this.textBoxUsername.TextChanged += new System.EventHandler(this.text_Box_Username);
-            this.textBoxUsername.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxUsername_Validating);
             // 
             // textBoxPassword
             // 
@@ -116,8 +112,6 @@
             this.textBoxPassword.Size = new System.Drawing.Size(272, 36);
             this.textBoxPassword.TabIndex = 7;
             this.toolTip2.SetToolTip(this.textBoxPassword, "enter your password");
-            this.textBoxPassword.TextChanged += new System.EventHandler(this.text_Box_Password);
-            this.textBoxPassword.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxPassword_Validating);
             // 
             // button1
             // 
@@ -174,7 +168,6 @@
             this.toolTip2.ReshowDelay = 500;
             this.toolTip2.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip2.ToolTipTitle = "Enter your password";
-            this.toolTip2.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip2_Popup);
             // 
             // errorProvider1
             // 
@@ -186,17 +179,40 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(47, 424);
+            this.progressBar1.Location = new System.Drawing.Point(180, 118);
             this.progressBar1.MarqueeAnimationSpeed = 10;
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(405, 23);
+            this.progressBar1.Size = new System.Drawing.Size(272, 23);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar1.TabIndex = 11;
-            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
             // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // radioButtonHumanResource
+            // 
+            this.radioButtonHumanResource.AutoSize = true;
+            this.radioButtonHumanResource.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.radioButtonHumanResource.Location = new System.Drawing.Point(248, 424);
+            this.radioButtonHumanResource.Name = "radioButtonHumanResource";
+            this.radioButtonHumanResource.Size = new System.Drawing.Size(165, 23);
+            this.radioButtonHumanResource.TabIndex = 12;
+            this.radioButtonHumanResource.TabStop = true;
+            this.radioButtonHumanResource.Text = "Human Resource";
+            this.radioButtonHumanResource.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonStudent
+            // 
+            this.radioButtonStudent.AutoSize = true;
+            this.radioButtonStudent.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.radioButtonStudent.Location = new System.Drawing.Point(33, 424);
+            this.radioButtonStudent.Name = "radioButtonStudent";
+            this.radioButtonStudent.Size = new System.Drawing.Size(92, 23);
+            this.radioButtonStudent.TabIndex = 13;
+            this.radioButtonStudent.TabStop = true;
+            this.radioButtonStudent.Text = "Student";
+            this.radioButtonStudent.UseVisualStyleBackColor = true;
             // 
             // Login_Form
             // 
@@ -204,6 +220,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkViolet;
             this.ClientSize = new System.Drawing.Size(487, 459);
+            this.Controls.Add(this.radioButtonStudent);
+            this.Controls.Add(this.radioButtonHumanResource);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.button2);
@@ -242,6 +260,8 @@
         private System.Windows.Forms.ErrorProvider errorProvider2;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Timer timer1;
+        public System.Windows.Forms.RadioButton radioButtonStudent;
+        public System.Windows.Forms.RadioButton radioButtonHumanResource;
     }
 }
 
